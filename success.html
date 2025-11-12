@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful - KMT Trading</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">KMT Trading</div>
+    </nav>
+  </header>
+
+  <section style="padding: 150px 0 100px;">
+    <div class="container" style="max-width: 800px;">
+      <div class="card" style="text-align: center;">
+        <h2 style="color: #28a745;">✅ Payment Successful!</h2>
+        <h3 id="courseTitle" style="margin: 1rem 0;">Welcome to KMT Trading!</h3>
+        
+        <div style="background: #e3f2fd; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+          <h4>📱 Join Our Exclusive Telegram Group</h4>
+          <p>All course materials and updates are shared in your private group.</p>
+          <a href="https://t.me/KMTTrading_Courses" target="_blank" class="btn">
+            Join Course Telegram Group
+          </a>
+        </div>
+
+        <div style="background: #fff3cd; padding: 2rem; border-radius: 10px;">
+          <h4>📅 Schedule Your Mentorship Session</h4>
+          <a href="https://calendly.com/YOUR_SCHEDULING_LINK" target="_blank" class="btn btn-accent">
+            Book Mentorship Call
+          </a>
+        </div>
+        
+        <a href="index.html" class="btn" style="margin-top: 2rem;">Return to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <h3>KMT Trading</h3>
+      <p>&copy; 2024 KMT Trading</p>
+    </div>
+  </footer>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const course = urlParams.get('course');
+    const titles = {'forex':'Forex Mastery','crypto':'Cryptocurrency Pro','business':'Trading Business'};
+    const titleEl = document.getElementById('courseTitle');
+    if (titleEl && titles[course]) titleEl.textContent = `Welcome to ${titles[course]}!`;
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

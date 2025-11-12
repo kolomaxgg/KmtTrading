@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Courses - KMT Trading</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">KMT Trading</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li id="loginLink"><a href="login.html">Login</a></li>
+        <li id="userInfo" style="display: none;"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section style="padding: 150px 0 100px;">
+    <div class="container">
+      <h2 class="section-title">Our Trading Courses</h2>
+      
+      <div class="card-grid">
+        <!-- Forex Course -->
+        <div class="card">
+          <h3>Forex Mastery Course</h3>
+          <p><strong>Price: $299</strong></p>
+          <ul>
+            <li>Complete Forex fundamentals</li>
+            <li>Technical & Fundamental analysis</li>
+            <li>Risk management strategies</li>
+            <li>Live trading sessions (4 weeks)</li>
+          </ul>
+          
+          <!-- PayPal Button - TODO: Replace merchant ID -->
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin-top: 1rem;">
+            <input type="hidden" name="business" value="YOUR_PAYPAL_MERCHANT_EMAIL@email.com">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="item_name" value="Forex Mastery Course - KMT Trading">
+            <input type="hidden" name="amount" value="299.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="return" value="https://kolomaxgg.github.io/KmtTrading/success.html?course=forex">
+            <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynowCC.png" border="0" name="submit" alt="Buy Now">
+          </form>
+        </div>
+
+        <!-- Crypto Course -->
+        <div class="card">
+          <h3>Cryptocurrency Pro Course</h3>
+          <p><strong>Price: $349</strong></p>
+          <ul>
+            <li>Blockchain fundamentals</li>
+            <li>Crypto trading strategies</li>
+            <li>Altcoin analysis & DeFi</li>
+            <li>Wallet security & risk management</li>
+          </ul>
+          
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin-top: 1rem;">
+            <input type="hidden" name="business" value="YOUR_PAYPAL_MERCHANT_EMAIL@email.com">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="item_name" value="Cryptocurrency Pro Course - KMT Trading">
+            <input type="hidden" name="amount" value="349.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="return" value="https://kolomaxgg.github.io/KmtTrading/success.html?course=crypto">
+            <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynowCC.png" border="0" name="submit" alt="Buy Now">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <h3>KMT Trading</h3>
+      <p>&copy; 2024 KMT Trading</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
