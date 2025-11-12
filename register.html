@@ -29,7 +29,7 @@
       <div class="success-message" id="successMessage"></div>
       <div class="error-message" id="errorMessage"></div>
 
-      <form id="registerForm" class="card">
+      <form id="registerForm" class="card" onsubmit="event.preventDefault()">
         <div class="form-group">
           <label for="regName">Full Name</label>
           <input type="text" id="regName" required>
@@ -53,4 +53,5 @@
   </footer>
   <script src="js/main.js"></script>
 </body>
+
 </html>
