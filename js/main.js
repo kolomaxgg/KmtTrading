@@ -1,26 +1,23 @@
 /* ==========  FIREBASE SET-UP  ========== */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-  updateProfile
-} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-const firebaseConfig = { /* PASTE YOUR CONFIG HERE */ };
+// ⚠️  PUT YOUR REAL CONFIG HERE  ⚠️
+const firebaseConfig = {
+  apiKey: "AIzaSyBxSI9jGhpYqyd9iws44LJ8y_YAf3nJHb8",
+  authDomain: "kmttrading-c1193.firebaseapp.com",
+  projectId: "kmttrading-c1193",
+  storageBucket: "kmttrading-c1193.firebasestorage.app",
+  messagingSenderId: "751962294613",
+  appId: "1:751962294613:web:063b3170f78c9b764cc7dc",
+  measurementId: "G-KMJXT68DWY"
+};
+
 const app  = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db   = getFirestore(app);
 /* ======================================== */
-
-/* ----------  UTILS  ---------- */
-function showMessage(msg, type) {               // type = 'success' | 'error'
-  const el = document.querySelector(`.${type}-message`);
-  if (el) { el.textContent = msg; el.style.display = 'block'; setTimeout(()=>el.style.display='none',5000); }
-}
 
 /* ----------  REGISTRATION  ---------- */
 async function handleRegister(e) {
@@ -35,11 +32,8 @@ async function handleRegister(e) {
 
   try {
     const userCred = await createUserWithEmailAndPassword(auth, email, password);
-    // store extra info
     await setDoc(doc(db, 'users', userCred.user.uid), { name, email, createdAt: new Date() });
-    // update displayName so auth.currentUser.displayName works
     await updateProfile(userCred.user, { displayName: name });
-
     showMessage('Registration successful! Redirecting…', 'success');
     setTimeout(() => location.href = 'login.html', 2000);
   } catch (err) {
@@ -71,10 +65,10 @@ function handleLogout() {
 onAuthStateChanged(auth, user => {
   const info = document.getElementById('userInfo');
   if (user) {
-    const displayName = user.displayName || user.email.split('@')[0]; // fallback to first part of email
+    const displayName = user.displayName || user.email.split('@')[0];
     info.innerHTML = `Welcome, ${displayName}! <button id="logoutBtn" class="btn" style="margin-left:8px;padding:4px 12px;font-size:0.85rem;">Logout</button>`;
     info.style.display = 'block';
-    document.getElementById('logoutBtn').onclick = handleLogout; // re-attach after DOM insert
+    document.getElementById('logoutBtn').onclick = handleLogout;
   } else {
     info.style.display = 'none';
   }
@@ -85,3 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('registerForm')?.addEventListener('submit', handleRegister);
   document.getElementById('loginForm')?.addEventListener('submit', handleLogin);
 });
+
+function showMessage(msg, type) {
+  const el = document.querySelector(`.${type}-message`);
+  if (el) { el.textContent = msg; el.style.display = 'block'; setTimeout(()=>el.style.display='none',5000); }
+}
