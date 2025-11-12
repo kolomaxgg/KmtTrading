@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - KMT Trading</title>
+  <title>Login – KMT Trading</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,15 +12,20 @@
       <div class="logo">KMT Trading</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li id="userInfo" style="display: none;"></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="mentorship.html">Mentorship</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li id="userInfo" style="display:none;"></li>
       </ul>
     </nav>
   </header>
 
-  <section style="padding: 150px 0 100px;">
-    <div class="container" style="max-width: 600px;">
+  <section style="padding:150px 0 100px;">
+    <div class="container" style="max-width:500px;">
       <h2 class="section-title">Login to Your Account</h2>
-      
       <div class="success-message" id="successMessage"></div>
       <div class="error-message" id="errorMessage"></div>
 
@@ -33,21 +38,15 @@
           <label for="loginPassword">Password</label>
           <input type="password" id="loginPassword" required>
         </div>
-        <button type="submit" class="btn" style="width: 100%;">Login</button>
-        <p style="text-align: center; margin-top: 1rem;">
-          Don't have an account? <a href="register.html">Register here</a>
-        </p>
+        <button type="submit" class="btn" style="width:100%;">Login</button>
+        <p style="text-align:center; margin-top:1rem;">Don't have an account? <a href="register.html">Register here</a></p>
       </form>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <h3>KMT Trading</h3>
-      <p>&copy; 2024 KMT Trading</p>
-    </div>
+    <div class="container"><p>© 2024 KMT Trading</p></div>
   </footer>
-
   <script src="js/main.js"></script>
 </body>
 </html>
