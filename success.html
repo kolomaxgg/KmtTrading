@@ -39,13 +39,6 @@
     <div class="container"><p>© 2024 KMT Trading</p></div>
   </footer>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const course = urlParams.get('course');
-    const titles = {'forex':'Forex Mastery','crypto':'Cryptocurrency Pro','business':'Trading Business'};
-    const titleEl = document.getElementById('courseTitle');
-    if (titleEl && titles[course]) titleEl.textContent = `Welcome to ${titles[course]}!`;
-  </script>
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
